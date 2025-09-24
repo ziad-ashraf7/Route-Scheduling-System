@@ -209,4 +209,26 @@ Headers:
 - Driver scheduling follows a first-Free-Route approach
 
 
+## Note
 
+If you encounter issues with ports (for example, if `27017` is already in use on your system), you can update the MongoDB port mapping in your `docker-compose.yml` file:
+
+```yaml
+ports:
+  - "27020:27017"
+````
+
+You may replace `27020` with any available port number on your host machine (e.g., `27018`, `27019`, etc.):
+
+```yaml
+ports:
+  - "270xx:27017"
+```
+
+After updating the port mapping, make sure to also update the `.env` file so that the `MONGODB_URI` matches the new port. For example:
+
+```
+MONGODB_URI=mongodb://localhost:27020/your-database-name
+```
+
+This ensures that your application connects to the correct MongoDB instance.
