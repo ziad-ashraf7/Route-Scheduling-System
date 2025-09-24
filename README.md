@@ -201,9 +201,6 @@ Headers:
     ```
 ## Assumptions Made
 
-- MongoDB is installed and running on default port 27017
-- Node.js and npm are installed on the system
-- Routes and drivers are managed through a RESTful API
 - Each driver can be assigned to only one active route at a time
 - Route scheduling follows a first-available-driver approach
 - Driver scheduling follows a first-Free-Route approach
